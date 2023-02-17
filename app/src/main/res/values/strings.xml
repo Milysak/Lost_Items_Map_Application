@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lost_Items_Map_Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_login">jan.kowalski@stg.pl</string>
+    <string name="example_password">Pass29word!34</string>
+    <string name="head_login_text">LOGIN (email):</string>
+    <string name="head_password_text">HASŁO:</string>
+    <string name="button_register_text">ZAREJESTRUJ</string>
+    <string name="button_login_text">ZALOGUJ</string>
+</resources>
