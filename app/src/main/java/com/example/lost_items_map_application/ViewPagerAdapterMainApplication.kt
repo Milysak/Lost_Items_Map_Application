@@ -11,7 +11,7 @@ class ViewPagerAdapterMainApplication(fragmentActivity: FragmentActivity): Fragm
     override fun createFragment(position: Int): Fragment {
         return when(position) {
             0 -> { ProfileFragment() }
-            1 -> { MapsFragment() }
+            1 -> { MapFragment() }
             else -> { throw Resources.NotFoundException("Position Not Found") }
         }
     }
