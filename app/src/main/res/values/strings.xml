@@ -8,4 +8,20 @@
     <string name="head_password_text">HASŁO:</string>
     <string name="button_register_text">ZAREJESTRUJ</string>
     <string name="button_login_text">ZALOGUJ</string>
+    <string name="fragment_login_main_text">LOGOWANIE</string>
+    <string name="fragment_register_main_text">REJESTRACJA</string>
+    <string name="head_second_password_text">POTWIERDŹ HASŁO:</string>
+    <string name="started_logo_text">MAPA\nSTRACONYCH\nRZECZY</string>
+    <string name="started_instruction">Przesuń w\nprawo...!</string>
+    <string name="head_register_name_text">IMIĘ:</string>
+    <string name="head_register_surname_text">NAZWISKO (nie wymagane):</string>
+    <string name="head_register_nick_text">PSEUDONIM:</string>
+    <string name="example_nick">Jano_3506</string>
+    <string name="example_surname">Kowalski</string>
+    <string name="example_name">Jan</string>
+    <string name="next_step_text">DALEJ</string>
+    <string name="back_step_text">COFNIJ</string>
+    <string name="end_of_register_text">ZAKOŃCZ</string>
+    <string name="date_of_birth">DATA URODZENIA:</string>
+    <string name="voivodeship_text">WOJEWÓDZTWO:</string>
 </resources>

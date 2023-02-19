@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fontFamily="sans-serif-smallcaps"
-    tools:context=".MainActivity">
+    tools:context=".MainAppFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -17,4 +16,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

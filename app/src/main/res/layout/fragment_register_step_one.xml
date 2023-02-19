@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context=".RegisterFragment">
+    tools:context=".RegisterStepOneFragment">
 
     <TextView
         android:id="@+id/textView2"
@@ -30,13 +30,13 @@
         android:layout_marginStart="50dp"
         android:layout_marginBottom="-10dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/head_login_text"
+        android:text="@string/head_register_name_text"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/loginField"
+        app:layout_constraintBottom_toTopOf="@+id/nameField"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/loginField"
+        android:id="@+id/nameField"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
@@ -44,7 +44,7 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="#59000000"
         android:fontFamily="sans-serif-smallcaps"
-        android:hint="@string/example_login"
+        android:hint="@string/example_name"
         android:textColor="#59000000"
         android:textColorHint="#40000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,13 +58,13 @@
         android:padding="5dp"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="-10dp"
-        android:text="@string/head_password_text"
+        android:text="@string/head_register_surname_text"
         android:textColor="@color/appOrange"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/passwordField"
+        app:layout_constraintBottom_toTopOf="@+id/surnameField"
         app:layout_constraintStart_toStartOf="parent" />
     <EditText
-        android:id="@+id/passwordField"
+        android:id="@+id/surnameField"
         android:textColor="#59000000"
         android:textColorHint="#40000000"
         android:backgroundTint="#59000000"
@@ -74,11 +74,10 @@
         android:layout_marginEnd="50dp"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:hint="@string/example_password"
-        android:inputType="textPassword"
+        android:hint="@string/example_surname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginField"/>
+        app:layout_constraintTop_toBottomOf="@+id/nameField"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,13 +86,13 @@
         android:padding="5dp"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="-10dp"
-        android:text="@string/head_second_password_text"
+        android:text="@string/head_register_nick_text"
         android:textColor="@color/appOrange"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/secondPasswordField"
+        app:layout_constraintBottom_toTopOf="@+id/pseudonimField"
         app:layout_constraintStart_toStartOf="parent" />
     <EditText
-        android:id="@+id/secondPasswordField"
+        android:id="@+id/pseudonimField"
         android:textColor="#59000000"
         android:textColorHint="#40000000"
         android:backgroundTint="#59000000"
@@ -103,11 +102,10 @@
         android:layout_marginEnd="50dp"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:hint="@string/example_password"
-        android:inputType="textPassword"
+        android:hint="@string/example_nick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordField"/>
+        app:layout_constraintTop_toBottomOf="@+id/surnameField"/>
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -117,24 +115,24 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondPasswordField">
+        app:layout_constraintTop_toBottomOf="@+id/pseudonimField">
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/nextButton"
             android:background="@drawable/empty_custom_button"
             android:textColor="@color/appOrange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:text="@string/button_register_text" />
+            android:text="@string/next_step_text" />
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/backButton"
             android:background="@drawable/fill_custom_button"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@string/button_login_text" />
+            android:text="@string/back_step_text" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

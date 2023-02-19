@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,39 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        val view =  inflater.inflate(R.layout.fragment_register, container, false)
+
+        val listener = activity as mInterface?
+
+        listener?.update(true)
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val loginField = view.findViewById<TextView>(R.id.loginField)
+        val passwordField = view.findViewById<TextView>(R.id.passwordField)
+        val secondPasswordField = view.findViewById<TextView>(R.id.secondPasswordField)
+
+        view.findViewById<Button>(R.id.loginButton).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
+        view.findViewById<Button>(R.id.registerButton).setOnClickListener {
+            if(loginField.text.isNotEmpty() && passwordField.text.isNotEmpty() && secondPasswordField.text.isNotEmpty()) {
+                if(loginField.text.find { char -> char == '@' } == null) {
+                    Toast.makeText(context, "Podany email jest niepoprawny...!", Toast.LENGTH_SHORT).show()
+                } else if(passwordField.text.toString() != secondPasswordField.text.toString()) {
+                    Toast.makeText(context, "Podane hasła nie są takie same...!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_registerStepOneFragment)
+                }
+            } else {
+                Toast.makeText(context, "Uzupełnij wszystkie pola...!", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     companion object {

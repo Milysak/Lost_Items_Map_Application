@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
-import androidx.navigation.Navigation
-import com.example.lost_items_map_application.databinding.FragmentLoginBinding
+import android.view.animation.AnimationUtils
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,16 +15,18 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
+ * Use the [StartedFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : Fragment() {
+class StartedFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
+    lateinit var startedAnimatedInstruction: TextView
+    lateinit var animatedElement0: TextView
+    lateinit var animatedElement1: TextView
+    lateinit var animatedElement2: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,33 +41,38 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-
-        val root: View = binding.root
-
-        val listener = activity as mInterface?
-
-        listener?.update(true)
-
-        return root
+        return inflater.inflate(R.layout.fragment_started, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.loginButton).setOnClickListener {
-            Toast.makeText(context, "TO DO...!", Toast.LENGTH_SHORT).show()
+        startedAnimatedInstruction = view.findViewById(R.id.startedAnimatedInstruction)
 
-            val listener = activity as mInterface?
+        animatedElement0 = view.findViewById(R.id.animatedElement0)
+        animatedElement1 = view.findViewById(R.id.animatedElement1)
+        animatedElement2 = view.findViewById(R.id.animatedElement2)
 
-            listener?.update(false)
+        startAnimation()
+    }
 
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_mainAppFragment)
-        }
+    override fun onResume() {
+        super.onResume()
 
-        view.findViewById<Button>(R.id.registerButton).setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment)
-        }
+        startAnimation()
+    }
+
+    private fun startAnimation() {
+        val animation1 = AnimationUtils.loadAnimation(context, R.anim.anim_1)
+        val animation2 = AnimationUtils.loadAnimation(context, R.anim.anim_2)
+        val animation3 = AnimationUtils.loadAnimation(context, R.anim.anim_3)
+        val animation4 = AnimationUtils.loadAnimation(context, R.anim.anim_4)
+
+        startedAnimatedInstruction.startAnimation(animation1)
+
+        animatedElement0.startAnimation(animation2)
+        animatedElement1.startAnimation(animation3)
+        animatedElement2.startAnimation(animation4)
     }
 
     companion object {
@@ -77,12 +82,12 @@ class LoginFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
+         * @return A new instance of fragment StartedFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
+            StartedFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -8,6 +8,20 @@
     tools:context=".LoginFragment">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/fragment_login_main_text"
+        android:textColor="@color/appOrange"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
         android:id="@+id/textView"
         android:padding="5dp"
         android:textColor="@color/appOrange"
@@ -20,22 +34,22 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/loginField"
         app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/loginField"
-        android:textColor="#59000000"
-        android:textColorHint="#40000000"
-        android:backgroundTint="#59000000"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#59000000"
         android:fontFamily="sans-serif-smallcaps"
         android:hint="@string/example_login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#59000000"
+        android:textColorHint="#40000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:textColor="@color/appOrange"
@@ -67,29 +81,33 @@
         app:layout_constraintTop_toBottomOf="@+id/loginField"/>
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:columnCount="2"
         android:rowCount="1"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordFields">
 
         <Button
-            android:background="@drawable/fill_custom_button"
-            android:textColor="@color/white"
+            android:id="@+id/registerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:text="@string/button_register_text" />
+            android:background="@drawable/fill_custom_button"
+            android:text="@string/button_register_text"
+            android:textColor="@color/white" />
+
         <Button
-            android:background="@drawable/empty_custom_button"
-            android:textColor="@color/appOrange"
+            android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@string/button_login_text" />
+            android:background="@drawable/empty_custom_button"
+            android:text="@string/button_login_text"
+            android:textColor="@color/appOrange" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
