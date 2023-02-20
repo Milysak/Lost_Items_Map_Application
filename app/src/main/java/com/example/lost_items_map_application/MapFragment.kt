@@ -66,26 +66,44 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 .tilt(0f)
                 .build()
 
+            mMap.setMapStyle(
+                MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.custom_file_style_map)
+            )
+
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 2500, null)
 
             mMap.addMarker(
                 MarkerOptions()
                     .position(LatLng(49.96522227153784, 19.103205126552318))
-                    .title("Najlepszy Lewy Obrońca")
+                    .title("A")
                     .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_person_map_icon))
             )
 
             mMap.addMarker(
                 MarkerOptions()
                     .position(LatLng(49.97547651306323, 19.12274918105278))
-                    .title("Samochód Iron Man'a")
+                    .title("B")
                     .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_car_map_icon))
             )
 
             mMap.addMarker(
                 MarkerOptions()
                     .position(LatLng(49.98452242324723, 19.05579408607591))
-                    .title("Szaleniec")
+                    .title("C")
+                    .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_person_map_icon))
+            )
+
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(LatLng(49.98120337451987, 18.955370945336686))
+                    .title("D")
+                    .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_car_map_icon))
+            )
+
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(LatLng(50.18344401692779, 18.856371001678937))
+                    .title("C")
                     .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_person_map_icon))
             )
         }
@@ -123,8 +141,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             }
     }
 
-    override fun onMapReady(p0: GoogleMap) {
-        p0.addMarker(
+    override fun onMapReady(googleMap: GoogleMap) {
+
+        googleMap.addMarker(
             MarkerOptions()
                 .position(LatLng(0.0, 0.0))
                 .title("Marker")
