@@ -59,16 +59,16 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
             mMap.clear() //clear old markers
 
+            mMap.setMapStyle(
+                MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.custom_file_style_map)
+            )
+
             val googlePlex = CameraPosition.builder()
                 .target(LatLng(49.96522227153784, 19.103205126552318))
                 .zoom(12.5f)
                 .bearing(0f)
                 .tilt(0f)
                 .build()
-
-            mMap.setMapStyle(
-                MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.custom_file_style_map)
-            )
 
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 2500, null)
 
